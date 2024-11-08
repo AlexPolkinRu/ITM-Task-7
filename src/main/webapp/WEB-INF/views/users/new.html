@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New user</title>
+    <style>
+        .btn {
+            font-family: Arial;
+            font-size: small;
+            cursor: pointer;
+            display: inline-block;
+            background: #767676;
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/users}" th:object="${user}">
+    <label for="name">Name:</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <label for="email">E-mail:</label>
+    <input type="email" th:field="*{email}" id="email"/>
+    <br/><br/>
+    <a href="/users" class="btn">Back</a>
+    <input type="submit" value="Add" class="btn"/>
+</form>
+
+</body>
+</html>
