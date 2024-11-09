@@ -1,15 +1,29 @@
-package ru.alexpolkin.springcourse.model;
+package ru.alexpolkin.springcourse.models;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(schema = "public", name = "userx")
 public class User {
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "email")
+
     private String email;
 
     public User() {
     }
 
-    public User(int id, String name, String email) {
-        this.id = id;
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
     }
